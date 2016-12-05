@@ -3,7 +3,8 @@ $(document).ready( function(){
 	//La variable "recipesArray" esta declarada en el archivo "data/recipes.js"
 	renderHighlightedRecipes(recipesArray);
 	$(".js-back").hide();
-		$(".js-menu").hide();
+	printNews ();
+
 
 });
 
@@ -26,7 +27,9 @@ function renderRecipe(recipe) {
 	console.log('Voy a pintar la receta: ', recipe);
 }
 
-
+function printNews () {
+	$(".callout-news p").append("Nuevas Recetas");
+}
 
 /*
 * Función que se encarga de pintar todas las actividades

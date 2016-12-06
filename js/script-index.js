@@ -5,7 +5,7 @@ $(document).ready(function(){
 	$(".js-back").hide();
 	printNews ();
 //pintarRecetas();
-
+	renderActivities(activities);
 });
 
 
@@ -31,7 +31,7 @@ function renderHighlightedRecipes(recipesArray) {
 function renderRecipe(recipe) {
 	console.log('Voy a pintar la receta: ', recipe);
 	var a = $('<a class="item-recipe"></a>');
-		
+
 	//span attribution
  	var spanAttribution = $('<span class="attribution"><span/>');
 	//span titulo de la receta
@@ -75,6 +75,13 @@ function printNews () {
 */
 function renderActivities(activitiesArray) {
 	console.log('Activities: ', activitiesArray);
+	if (activitiesArray.length>0) {
+		$(".wrapper-message").hide('fast');
+	}
+	for (var i = 0; i<activitiesArray.length;i++) {
+			renderActivities(activitiesArray[i]);
+	}
+
 }
 
 /*

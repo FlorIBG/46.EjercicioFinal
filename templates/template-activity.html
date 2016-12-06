@@ -1,19 +1,36 @@
 <a href="#" class="item-activity">
 
   <span class="attribution">
-  
+
     <span class="avatar">
       <img src="URL DE IMAGEN DE USUARIO (ATRIBUTO "userAvatar")" class="image-avatar">
     </span>
-      
+
     <span class="meta">
-      <span class="author">PRIMER NOMBRE DEL USUARIO (ATRIBUTO "userName")</span> made 
-      <span class="recipe">TITULO DE LA RECETA (ATRIBUTO "recipeName")</span>: TEXTO ACERCA DE LA RECETA (ATRIBUTO "text") 
+      <span class="author">PRIMER NOMBRE DEL USUARIO (ATRIBUTO "userName")</span> made
+      <span class="recipe">TITULO DE LA RECETA (ATRIBUTO "recipeName")</span>: TEXTO ACERCA DE LA RECETA (ATRIBUTO "text")
       <span class="location">&mdash;UBICACION DEL USUARIO (ATRIBUTO "place")</span>
     </span>
-  
+
   </span>
 
   <div class="bg-image" style="background-image: url('IMAGEN DE RECETA (ATTRIBUTO "image")');"></div>
 
 </a>
+var template =
+'<a href="#" class="item-activity">' +
+      '  <span class="attribution">' +
+        '  <span class="avatar">' +
+                '<img src=&quot;<%= userAvatar %>&quot; class="avatar">' +
+          '</span>' +
+          '  <span class="meta">' +
+                '<span class="author"><%= recipe.userName %></span>' +
+                '<span class="recipe"><%= recipe.recipeNAme %></span>' +
+                '<span class="location">&mdash;<%= recipe.place %></span>' +
+          '</span>' +
+        '</span>'
+      '<p><%= pet.name %></p>' +
+      '<p><%= pet.age.number %>' +
+        '<span><%= pet.age.type %></span>' +
+      '</p>' +
+  '</a>';

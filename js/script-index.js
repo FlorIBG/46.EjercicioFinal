@@ -79,7 +79,7 @@ function renderActivities(activitiesArray) {
 		$(".wrapper-message").hide('fast');
 	}
 	for (var i = 0; i<activitiesArray.length;i++) {
-			renderActivities(activitiesArray[i]);
+			renderActivity(activitiesArray[i]);
 	}
 
 }
@@ -90,5 +90,27 @@ function renderActivities(activitiesArray) {
 * archivo "templates/templates-activity.html"
 */
 function renderActivity(recipe) {
-
+	console.log(recipe);
+	var templateActivity =
+	'<a href="#" class="item-activity">' +
+	    '<span class="attribution">' +
+	        '<span class="avatar">' +
+	            '<img src="<%= userAvatar %>" class="avatar">' +
+	         '</span>' +
+	         '<span class="meta">' +
+	              '<span class="author"><%= userName %></span>' +
+	              '<span class="recipe"><%= recipeName %></span>' +
+	              '<span class="location">&mdash;<%= place %></span>' +
+	          '</span>' +
+	      '</span>' +
+	      '<div class="bg-image" style="background-image: url(&quot;<%= image %>&quot;)"></div>'
+	 '</a>';
+	 console.log("algo")
+	 var compiled = _.template(templateActivity);
+	  console.log("algo 2")
+	 var a = compiled(recipe);
+	  console.log("algo 3")
+	 console.log(a);
+	 var element = $(a);
+	 $('.list-activities').append(element);
 }

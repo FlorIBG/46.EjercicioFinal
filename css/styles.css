@@ -2189,7 +2189,7 @@ nav .nav-group.right {
   padding-left: 1.25rem;
 }
 #admin form {
-  font-size: 14px;
+  font-size: 14px; 
   line-height: 20px;
   background: white;
   padding: .75rem 0 0;
@@ -2203,4 +2203,8 @@ nav .nav-group.right {
 }
 #admin .btn-primary {
   width: 100%;
+}
+.cuadro {
+  border-color: 2px red solid;
+  height: 50px;
 }

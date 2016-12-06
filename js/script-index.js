@@ -1,10 +1,10 @@
-$(document).ready( function(){
+$(document).ready(function(){
 
 	//La variable "recipesArray" esta declarada en el archivo "data/recipes.js"
 	renderHighlightedRecipes(recipesArray);
 	$(".js-back").hide();
 	printNews ();
-
+//pintarRecetas();
 
 });
 
@@ -30,11 +30,45 @@ function renderHighlightedRecipes(recipesArray) {
 */
 function renderRecipe(recipe) {
 	console.log('Voy a pintar la receta: ', recipe);
+	var a = $('<a class="item-recipe"></a>');
+		
+	//span attribution
+ 	var spanAttribution = $('<span class="attribution"><span/>');
+	//span titulo de la receta
+ 	var spanTitle = $('<span class="title-recipe"><span/>');
+	spanTitle.attr("title",recipe.title);
+	spanTitle.text(recipe.title);
+	//span metha data
+	var spanMetadata = $('<span class="metadata-recipe"><span/>');
+	//span autor de la receta
+	var spanAuthor = $('<span class="author-recipe"><span/>');
+	spanAuthor.text(recipe.name);
+//span bookmarks-recipe
+var spanBookmark = $('<span class="bookmarks-recipe"><span/>');
+	//span icon-bookmark
+	var spanIcon = $('<span class="icon-bookmark"><span/>');
+	spanIcon.text(recipe.cookTime);
+	//IMAGEN
+	var img = $('<img/>');
+	img.attr('src',recipe.source.url);
+	//div extra
+	//var divA = $('<div class="cuadro"></div>');
+	spanBookmark.append(spanIcon);
+	spanMetadata.append(spanBookmark);
+	spanMetadata.append(spanAuthor);
+	spanAttribution.append(spanMetadata);
+	spanAttribution.append(spanTitle);
+	a.append(img);
+	a.append(spanAttribution);
+
+	$('.list-recipes').append(a);
+
 }
 
 function printNews () {
 	$(".callout-news p").append("Nuevas Recetas");
 }
+
 
 /*
 * Función que se encarga de pintar todas las actividades
